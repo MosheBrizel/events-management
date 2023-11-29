@@ -11,7 +11,6 @@ import loginFunction from "../controllers/routerAuth/login.js";
 import verifyEmailfunction from "../controllers/routerAuth/verifyEmailCode.js";
 import emailFanction from "../controllers/routerAuth/getPassOrCodeEmail.js";
 import signupFunction from "../controllers/routerAuth/signup.js";
-import usernameFunction from "../controllers/routerAuth/usernameUesd.js";
 import tokenFunction from "../controllers/routerAuth/checkToken.js";
 import multer from "multer";
 import { fileURLToPath } from "node:url";
@@ -34,7 +33,6 @@ router.post(
   ],
   signupFunction
 );
-router.post("/username", usernameFunction);
 router.post("/token", tokenFunction);
 router.get("/", async (req, res) => {
   const response = await getRowsfromAllUsers("email username image");

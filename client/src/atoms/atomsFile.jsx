@@ -1,7 +1,15 @@
-import { atom } from "jotai";
+import { atom, useAtom } from "jotai";
 
-export const tokenAtom = atom(null);
+const tokenAtom = atom(null);
 
-export const userInfo = atom({});
+const userInfo = atom({});
 
 export const emailUserForgetPassword = atom("")
+
+
+export function useToken(){
+    return useAtom(tokenAtom)
+} 
+export function useUserInfo(){
+    return useAtom(userInfo)
+} 
