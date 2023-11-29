@@ -63,20 +63,14 @@ export function GetCode(props) {
     <WheelWaiting open={waiting}/>
     {netError ? (<ErrorConection/>):(
     <ThemeProvider theme={theme}>
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <img src="logo/logo.png" alt=""
-          style={{width: '422.89px',
-                  top: '171.09px',
-                  left: '305px',
-                }}/>
-          </div>
+    
       <Container
         component="main"
         maxWidth="xs"
         sx={{
           backgroundColor: "white.main",
           borderRadius: "10px",
-          color: "white.main",
+          color: "text.main",
           border:"1px solid",
           ".MuiInputLabel-root, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
             {
@@ -94,7 +88,7 @@ export function GetCode(props) {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "black.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "white.main",border:"1px solid" }}>
             <LockOutlinedIcon
               sx={{
                 fill: "inherit",
@@ -119,7 +113,7 @@ export function GetCode(props) {
           >
           <Typography variant="body2" gutterBottom color={'black.main'} display='inline'>
             Enter the code sent to you by e-mail to: {' '}
-            <Typography variant="body2" gutterBottom color={'white.main'} display='inline'>
+            <Typography variant="body2" gutterBottom color={'text.main'} display='inline'>
             {props.email}
             </Typography>
           </Typography>

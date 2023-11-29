@@ -16,7 +16,7 @@ const WheelWaiting = (props) => {
         >
         <div style={{display: 'flex', justifyContent: 'center'}}>
             <CircularProgress 
-            color="yelow"
+            color="text"
             /> 
         </div>
         </div>

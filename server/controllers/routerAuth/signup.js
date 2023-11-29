@@ -9,13 +9,14 @@ const signupFunction = async (req, res) => {
   // get the erorrs in the check middelwer.
   const errors = validationResult(req);
   // If there is an erorr.
+  console.log("kjnhbgbnj");
   if (!errors.isEmpty()) {
     return res.status(400).json({
       errors: errors.array(),
     });
   }
   
-  const { firstName, lastName, email, username, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
   
 
   //check if there is a user like this.
@@ -42,7 +43,6 @@ const signupFunction = async (req, res) => {
     firstName: firstName,
     lastName: lastName,
     email: email,
-    username: username,
     password: " ",
     image : imageUrl
   });

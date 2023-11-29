@@ -20,7 +20,6 @@ import WheelWaitingLogo from "./components/Features/wheelWaitingLogo.jsx";
 import Forgot from "./components/forgetPassword/forgot.jsx";
 import ErrorConection from "./components/Features/errorConection.jsx";
 
-import { useState } from "react";
 
 //out routers
 
@@ -33,7 +32,6 @@ let RouterMessage;
 export default function App() {
   const [token, setToken] = useAtom(tokenAtom);
   const [info, setUserInfo] = useAtom(userInfo);
-  const [imp, setImp] = useState("");
 
   useEffect(() => {
     async function tokencheck() {
