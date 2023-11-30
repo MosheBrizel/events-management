@@ -6,14 +6,19 @@ import Typography from "@mui/material/Typography";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import { Box, CardActionArea, Chip } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import { useEvent } from "./atom";
+import InformationEvent from "./informationEvent";
 
 export default function EventCard(props) {
-  console.log(props.data);
+  const [corentEvent, setCorentEvent] = useEvent();
   return (
     <Card
-      sx={{ maxWidth: 345, boxShadow: " 0px 0px 26px -2px rgba(122,120,122,1)" }}
+      sx={{
+        maxWidth: 345,
+        boxShadow: " 0px 0px 26px -2px rgba(122,120,122,1)",
+      }}
     >
-      <CardActionArea>
+      <CardActionArea onClick={() => setCorentEvent(props.data)}>
         <CardMedia
           component="img"
           height="140"
@@ -24,11 +29,18 @@ export default function EventCard(props) {
           <Typography gutterBottom variant="h5" component="div">
             {props.data.label}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props.data.description}
-          </Typography>
-          <Box display="flex" alignContent="center" alignItems="end">
-            <Box>
+          <div style={{ height: 50, whiteSpace: "nowrap" }}>
+            <Typography
+              component="div"
+              sx={{ textOverflow: "ellipsis", overflow: "hidden", my: 2, p: 1 }}
+              variant="body2"
+              color="text.secondary"
+            >
+              {props.data.description}
+            </Typography>
+          </div>
+          <Box display="flex"  alignItems="end" justifyContent={'space-between'}>
+            <Box display={'flex'} flexDirection={'column'}>
               <Chip
                 color="info"
                 label={new Date(props.data.date).toDateString()}
@@ -37,7 +49,7 @@ export default function EventCard(props) {
               />
               <Chip
                 color="info"
-                label={`places left ${
+                label={`Places left ${
                   props.data.places - props.data.placesTaking
                 }`}
                 icon={<PeopleAltIcon />}

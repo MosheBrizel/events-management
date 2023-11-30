@@ -43,7 +43,7 @@ export default function AppLayout() {
         <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
-              src="/public/levent.png"
+              src="/levent.png"
               alt=""
               style={{ height: "30px", marginRight: "10px" }}
             />

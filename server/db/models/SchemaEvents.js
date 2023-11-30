@@ -44,6 +44,13 @@ const eventSchema = new mongoose.Schema({
   organizerEvent: {
     type: String,
   },
+  numberEvent: {
+    type: Number,
+    unique: true,
+  },
+  noteLocation: {
+    type: String,
+  },
 });
 
 const Event = mongoose.model("Event", eventSchema);
