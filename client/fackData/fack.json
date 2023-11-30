@@ -1,0 +1,72 @@
+[
+  {
+    "label": "Party",
+    "date": "2023-12-21T18:38:48.282Z",
+    "cost": 30,
+    "image": "https://example.com/image.jpg",
+    "places": 177,
+    "placesTaking": 2,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "location": "City, Country",
+    "dressCode": "Casual",
+    "arrivalInstructions": "Arrive on time",
+    "ageRestriction": "18+",
+    "organizerEvent": "Event Organizer"
+  },
+  {
+    "label": "Festival",
+    "date": "2023-12-24T18:38:48.282Z",
+    "cost": 60,
+    "image": "https://example.com/image.jpg",
+    "places": 809,
+    "placesTaking": 644,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "location": "City, Country",
+    "dressCode": "Casual",
+    "arrivalInstructions": "Arrive on time",
+    "ageRestriction": "18+",
+    "organizerEvent": "Event Organizer"
+  },
+  {
+    "label": "Conference",
+    "date": "2023-12-13T18:38:48.282Z",
+    "cost": 97,
+    "image": "https://example.com/image.jpg",
+    "places": 432,
+    "placesTaking": 59,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "location": "City, Country",
+    "dressCode": "Casual",
+    "arrivalInstructions": "Arrive on time",
+    "ageRestriction": "18+",
+    "organizerEvent": "Event Organizer"
+  },
+  {
+    "label": "Conference",
+    "date": "2023-12-17T18:38:48.282Z",
+    "cost": 0,
+    "image": "https://example.com/image.jpg",
+    "places": 966,
+    "placesTaking": 180,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "location": "City, Country",
+    "dressCode": "Casual",
+    "arrivalInstructions": "Arrive on time",
+    "ageRestriction": "18+",
+    "organizerEvent": "Event Organizer"
+  },
+  {
+    "label": "Concert",
+    "date": "2023-12-09T18:38:48.282Z",
+    "cost": 73,
+    "image": "https://example.com/image.jpg",
+    "places": 784,
+    "placesTaking": 607,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "location": "City, Country",
+    "dressCode": "Casual",
+    "arrivalInstructions": "Arrive on time",
+    "ageRestriction": "18+",
+    "organizerEvent": "Event Organizer"
+  }
+]

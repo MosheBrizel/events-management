@@ -1,28 +1,60 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import { Box, CardActionArea, Chip } from "@mui/material";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
-export default function ActionAreaCard(props) {
+export default function EventCard(props) {
+  console.log(props.data);
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{ maxWidth: 345, boxShadow: " 0px 0px 26px -2px rgba(122,120,122,1)" }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={props.image}
+          image={props.data.image}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            {props.data.label}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {props.data.description}
           </Typography>
+          <Box display="flex" alignContent="center" alignItems="end">
+            <Box>
+              <Chip
+                color="info"
+                label={new Date(props.data.date).toDateString()}
+                icon={<CalendarTodayIcon />}
+                sx={{ padding: "10px", margin: "5px" }}
+              />
+              <Chip
+                color="info"
+                label={`places left ${
+                  props.data.places - props.data.placesTaking
+                }`}
+                icon={<PeopleAltIcon />}
+                sx={{ padding: "10px", margin: "5px" }}
+              />
+            </Box>
+            <Box
+              color="#0288d1"
+              fontFamily='"Roboto","Helvetica","Arial",sans-serif'
+              fontSize="0.9125rem"
+            >
+              {props.data.cost.toLocaleString("en-US", {
+                style: "currency",
+                currency: "ILS",
+              })}
+            </Box>
+          </Box>
         </CardContent>
       </CardActionArea>
     </Card>
