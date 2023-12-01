@@ -44,14 +44,14 @@ function handleWord(word) {
   return word.slice(0, 5) + "..." + word.slice(-5);
 }
 
-export default function UploadPhoto() {
+export default function UploadPhoto(props) {
   const [image, setImage] = useState("Upload a profile photo");
 
   const uploadImage = async (event) => {
     const file = event.target.files[0];
     setImage(shortenString(file.name));    
   };
-
+  const fullW = props.CreateEvent
   return (
     <Button
       sx={{
@@ -64,7 +64,7 @@ export default function UploadPhoto() {
         color: "blue.main",
       }}
       component="label"
-      fullWidth
+      fullWidth={!fullW ? true: null}
       variant="contained"
       color="white"
       startIcon={<CloudUploadIcon />}

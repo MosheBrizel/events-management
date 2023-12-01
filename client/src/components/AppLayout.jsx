@@ -41,19 +41,19 @@ export default function AppLayout() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="white">
-        <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
+        <Toolbar sx={{flexDirection:"row", justifyContent: 'space-between', alignItems: "center" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
               src="/levent.png"
               alt=""
               style={{ height: "30px", marginRight: "10px" }}
             />
-            <Grid sx={{ marginLeft: "30vw" }}>
-              <Search />
-            </Grid>
           </Box>
+
+          <Search />
+
           <Box
-            sx={{ marginLeft: "auto", display: "flex", alignItems: "center" }}
+            sx={{  display: "flex", alignItems: "center" }}
           >
             {!token ? (
               <NavLink to={"SignIn"} color="blue" sx={{ color: "blue" }}>
@@ -100,6 +100,14 @@ export default function AppLayout() {
                     </Typography>
                   </MenuItem>
                   <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate("/CreateEvent")}
+                    >
+                      Create your one Event
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" onClick={handleLogout}>
                       Logout
                     </Typography>
@@ -111,6 +119,23 @@ export default function AppLayout() {
         </Toolbar>
       </AppBar>
       <Outlet />
+      <Box
+        width={"100%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignContent={"center"}
+        alignItems={"center"}
+      >
+        <Button
+          onClick={() => navigate("/")}
+          sx={{
+            margin: "50px",
+            border: "1px solid",
+          }}
+        >
+          back to home page
+        </Button>
+      </Box>
     </Box>
   );
 }

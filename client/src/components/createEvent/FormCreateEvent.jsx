@@ -11,19 +11,17 @@ import instance from "../../../exios/axiosInstance";
 import urlPage from "../../../url/urlPath";
 
 export default function FormCreateEvent() {
-
-    async function handleSubmit(event){
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log(data.get('image'));
-        const result = await instance.post(urlPage + 'event/createEvent',data,{
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          })
-        console.log(result);
-    }
-
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log(data.get("image"));
+    const result = await instance.post(urlPage + "event/createEvent", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    console.log(result);
+  }
 
   return (
     <Box marginLeft={"5%"} width={"90%"}>
@@ -143,10 +141,10 @@ export default function FormCreateEvent() {
             variant="standard"
             name="ageRestriction"
           />
-          <UploadPhoto />
-          <Button type="submit">create</Button>
-
-          
+          <UploadPhoto CreateEvent={true} />
+          <Button sx={{ border: "1px solid", width:'15%'}} type="submit">
+            create
+          </Button>
         </Box>
       </Form>
     </Box>

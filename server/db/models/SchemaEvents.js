@@ -15,6 +15,8 @@ const eventSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    default:
+      "https://media-cdn.tripadvisor.com/media/photo-s/10/c4/23/16/highland-view-bed-and.jpg",
   },
   places: {
     type: Number,
@@ -52,8 +54,6 @@ const eventSchema = new mongoose.Schema({
     type: String,
   },
 });
-
-
 
 const Event = mongoose.model("Event", eventSchema);
 export default Event;

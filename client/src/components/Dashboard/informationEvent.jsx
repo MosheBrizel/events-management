@@ -46,10 +46,8 @@ export default function InformationEvent(props) {
         <CardMedia
           component="img"
           height="400"
-          // image={event.image}
-          image={
-            "https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          }
+          image={corentEvent.image}
+          
           alt="green iguana"
         />
         <Box display={"flex"} flexDirection={"column"}>
