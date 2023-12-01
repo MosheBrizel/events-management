@@ -11,8 +11,7 @@ import {
 
 const RegistrationEventFunction = async (req, res) => {
   const { corentEvent, email } = req.body;
-  const data = await getRowsfromAllUserEventsByObject({email:email})
-console.log(data);
+  const data = await getRowsfromAllUserEventsByObject({ email: email });
   try {
     const eventUse = await getOneEvent({ numberEvent: corentEvent });
 
@@ -48,7 +47,8 @@ console.log(data);
         },
       });
     }
-    const data = await getRowsfromAllUserEventsByObject({email:email})
+    const data = await getRowsfromAllUserEventsByObject({ email: email });
+    
     return res.status(200).json(data);
   } catch (error) {
     return res.status(400).json({
@@ -57,7 +57,6 @@ console.log(data);
       },
     });
   }
-
 };
 
 export default RegistrationEventFunction;

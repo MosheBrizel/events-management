@@ -7,7 +7,6 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import { Box, CardActionArea, Chip } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import { useEvent } from "./atom";
-import InformationEvent from "./informationEvent";
 
 export default function EventCard(props) {
   const [corentEvent, setCorentEvent] = useEvent();
@@ -16,6 +15,7 @@ export default function EventCard(props) {
       sx={{
         maxWidth: 345,
         boxShadow: " 0px 0px 26px -2px rgba(122,120,122,1)",
+        backgroundColor: props.registered ? "rgba(44, 177, 88, 0.300)" : "white",
       }}
     >
       <CardActionArea onClick={() => setCorentEvent(props.data)}>
@@ -23,7 +23,7 @@ export default function EventCard(props) {
           component="img"
           height="140"
           image={props.data.image}
-          alt="green iguana"
+          alt="image"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -39,8 +39,8 @@ export default function EventCard(props) {
               {props.data.description}
             </Typography>
           </div>
-          <Box display="flex"  alignItems="end" justifyContent={'space-between'}>
-            <Box display={'flex'} flexDirection={'column'}>
+          <Box display="flex" alignItems="end" justifyContent={"space-between"}>
+            <Box display={"flex"} flexDirection={"column"}>
               <Chip
                 color="info"
                 label={new Date(props.data.date).toDateString()}

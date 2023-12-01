@@ -31,7 +31,6 @@ const emailFunction = async (req, res) => {
       "verifyEmail.value": verifyPassword,
       "verifyEmail.date": new Date(),
     });
-    console.log(resSave);
     if (!resSave) {
       return res.status(400).json({
         mag: "error in DB",

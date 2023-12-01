@@ -48,11 +48,14 @@ const loginFunction = async (req, res) => {
     username: user.username,
     image: user.image,
   };
-
+  const data = await getRowsfromAllUserEventsByObject({
+    email: email,
+  });
   if (user.token.value != "" && diffTime.hours < 720) {
     return res.status(200).json({
       token: user.token.value,
       user: sendInformtionUser,
+      data: data,
     });
   }
   // creat a token with the email inside.
@@ -75,10 +78,8 @@ const loginFunction = async (req, res) => {
         mag: "error in DB",
       });
     }
-    const data = await getRowsfromAllUserEventsByObject({
-      email: user.email,
-    });
-    res.status(200).json({
+
+    return res.status(200).json({
       token: token,
       user: sendInformtionUser,
       data: data,
@@ -89,10 +90,10 @@ const loginFunction = async (req, res) => {
     });
   }
   // send the token.
-  res.status(200).json({
-    token: token,
-    user: sendInformtionUser,
-  });
+  // res.status(200).json({
+  //   token: token,
+  //   user: sendInformtionUser,
+  // });
 };
 
 export default loginFunction;

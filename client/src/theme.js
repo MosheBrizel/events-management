@@ -4,11 +4,12 @@ import { green, red } from "@mui/material/colors";
 // Create a theme instance.
 const theme = createTheme({
   palette: {
-    
     error: {
       main: red.A400,
     },
-    
+    green: {
+      main:'rgba(44, 177, 88, 0.632)'
+    },
     white: {
       main: "#fff",
     },
@@ -25,9 +26,9 @@ const theme = createTheme({
     black: {
       main: "#000000",
     },
-    blue:{
-      main:"#275FC1"
-    }
+    blue: {
+      main: "#275FC1",
+    },
   },
 });
 

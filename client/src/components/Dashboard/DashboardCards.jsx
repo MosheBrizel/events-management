@@ -8,12 +8,13 @@ import InformationEvent from "./informationEvent";
 import CloseIcon from "@mui/icons-material/Close";
 import urlPage from "../../../url/urlPath";
 import axios from "axios";
+import { useDataRegistered } from "../../atoms/atomsFile";
 
 export default function DashboardCards() {
   const [evens, setEvens] = useState([]);
   const [oneEvent, setOneEvent] = useEvent();
   const [open, setOpen] = React.useState(false);
-
+  const [DataRegist, setDataRegist] = useDataRegistered()
   const handleClose = () => {
     setOpen(false);
     setOneEvent(null);
@@ -26,7 +27,6 @@ export default function DashboardCards() {
     async function getDataServer(){
       try {
         const data = await axios.get(urlPage + "event/allEvents");
-        console.log(data.data);
         setEvens(data.data);
       } catch (error) {
         console.log(error);
@@ -63,7 +63,7 @@ export default function DashboardCards() {
                 background: "white",
               }}
             >
-              <InformationEvent />
+              <InformationEvent funcClos={() => handleClose()} />
             </Box>
           </Box>
         </Backdrop>
@@ -81,7 +81,7 @@ export default function DashboardCards() {
         {evens.map((cardInfo, index) => {
           return (
             <Button key={index} onClick={handleOpen}>
-              <EventCard key={index} data={cardInfo} />
+              <EventCard registered={DataRegist.includes(String(cardInfo.numberEvent))} key={index} data={cardInfo} />
             </Button>
           );
         })}

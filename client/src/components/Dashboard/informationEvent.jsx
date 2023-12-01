@@ -1,20 +1,23 @@
 import { Box, Button, CardMedia, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useEvent } from "./atom";
-import { useToken, useUserInfo } from "../../atoms/atomsFile";
+import {
+  useDataRegistered,
+  useToken,
+  useUserInfo,
+} from "../../atoms/atomsFile";
 import PopupLogIn from "../PopupLogIn";
 
 import instance from "../../../exios/axiosInstance";
 import urlPage from "../../../url/urlPath";
 
-export default function InformationEvent() {
+export default function InformationEvent(props) {
   const [corentEvent, setCorentEvent] = useEvent();
   const [token, setToken] = useToken();
   const [logInComp, setLogInComp] = useState(false);
   const [user, setUser] = useUserInfo();
-  console.log(user);
+  const [DataRegist, setDataRegist] = useDataRegistered();
 
-  console.log(corentEvent);
   async function handleRegister() {
     if (!token) {
       setLogInComp(true);
@@ -27,7 +30,8 @@ export default function InformationEvent() {
             email: user.email,
           }
         );
-        console.log(result);
+        setDataRegist(result.data.map((item) => item.eventId));
+        props.funcClos();
       } catch (error) {
         console.log(error);
       }
@@ -154,9 +158,13 @@ export default function InformationEvent() {
             justifyContent={"center"}
             marginTop="50px"
           >
-            <Button onClick={handleRegister} sx={{ border: "1px solid" }}>
-              Register for the event
-            </Button>
+            {!DataRegist.includes(String(corentEvent.numberEvent)) ? (
+              <Button onClick={handleRegister} sx={{ border: "1px solid" }}>
+                Register for the event
+              </Button>
+            ) : (
+              <Box>You registered for the event</Box>
+            )}
           </Box>
         </Box>
       </Box>

@@ -45,7 +45,6 @@ export default function PopupLogIn(props) {
           <Button
             autoFocus
             onClick={() => {
-              console.log("jnhb");
               navigate("/SignIn");
             }}
           >

@@ -99,6 +99,7 @@ export default function SignIn() {
         });
 
         if (response.status == 200) {
+          console.log(response);
           const token = response.data.token;
           const user = response.data.user;
           setdataRegist(response.data.data.map((item) => item.eventId));
