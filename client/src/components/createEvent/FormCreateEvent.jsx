@@ -14,7 +14,10 @@ export default function FormCreateEvent() {
   async function handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log(data.get("image"));
+    if (!/^-?\d*\.?\d+$/.test(data.get("cost") )|| !/^-?\d*\.?\d+$/.test(data.get("places"))) {
+      return;
+    }
+    console.log(data.get("cost"));
     const result = await instance.post(urlPage + "event/createEvent", data, {
       headers: {
         "Content-Type": "multipart/form-data",
@@ -24,9 +27,28 @@ export default function FormCreateEvent() {
   }
 
   return (
-    <Box marginLeft={"5%"} width={"90%"}>
+    <Box
+      marginLeft={"5%"}
+      width={"90%"}
+      sx={{
+        color: "blue.main",
+        ".MuiInputLabel-root, .MuiSvgIcon-root, .MuiInputBase-inputMultiline, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
+          {
+            color: "blue.main",
+            borderColor: "blue.main",
+          },
+      }}
+    >
       <Form onSubmit={handleSubmit}>
-        <Typography gutterBottom variant="h2" component="div">
+        <Typography
+          sx={{
+            color: "blue.main",
+          }}
+          color="blue"
+          gutterBottom
+          variant="h2"
+          component="div"
+        >
           Create your one event
         </Typography>
         <Box
@@ -36,8 +58,10 @@ export default function FormCreateEvent() {
           alignItems={"baseline"}
         >
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Label"
             multiline
@@ -47,8 +71,10 @@ export default function FormCreateEvent() {
             required
           />
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="description"
             multiline
@@ -70,8 +96,10 @@ export default function FormCreateEvent() {
             </DemoContainer>
           </LocalizationProvider>
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Cost"
             multiline
@@ -80,8 +108,10 @@ export default function FormCreateEvent() {
             name="cost"
           />
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Places"
             multiline
@@ -91,8 +121,10 @@ export default function FormCreateEvent() {
             required
           />
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Location"
             multiline
@@ -102,8 +134,10 @@ export default function FormCreateEvent() {
             required
           />
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Note location"
             multiline
@@ -112,8 +146,10 @@ export default function FormCreateEvent() {
             name="noteLocation"
           />
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Dress code"
             multiline
@@ -123,7 +159,10 @@ export default function FormCreateEvent() {
           />
           <TextField
             //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Arrival instructions"
             multiline
@@ -132,8 +171,10 @@ export default function FormCreateEvent() {
             name="arrivalInstructions"
           />
           <TextField
-            //   fullWidth
-
+            sx={{
+              color: "blue.main",
+            }}
+            color="blue"
             id="standard-multiline-flexible"
             label="Age restriction (write the age)"
             multiline
@@ -142,7 +183,7 @@ export default function FormCreateEvent() {
             name="ageRestriction"
           />
           <UploadPhoto CreateEvent={true} />
-          <Button sx={{ border: "1px solid", width:'15%'}} type="submit">
+          <Button sx={{ border: "1px solid", width: "15%" }} type="submit">
             create
           </Button>
         </Box>

@@ -18,10 +18,14 @@ export default function InformationEvent(props) {
   const [user, setUser] = useUserInfo();
   const [DataRegist, setDataRegist] = useDataRegistered();
 
+
   async function handleRegister() {
     if (!token) {
       setLogInComp(true);
     } else {
+      if (corentEvent.places - corentEvent.placesTaking <= 0){
+        return
+      }
       try {
         const result = await instance.post(
           urlPage + "event/RegistrationEvent",
@@ -30,7 +34,8 @@ export default function InformationEvent(props) {
             email: user.email,
           }
         );
-        setDataRegist(result.data.map((item) => item.eventId));
+        console.log(result);
+        setDataRegist(result.data.data.map((item) => item.eventId));
         props.funcClos();
       } catch (error) {
         console.log(error);

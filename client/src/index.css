@@ -2,5 +2,13 @@ body{
     margin: 0;
     color: rgb(18, 17, 17) ;
     font-family: "Poppins";
-    
+    background-image: linear-gradient(
+        rgba(253, 253, 253, 0.603),
+        rgba(242, 238, 238, 0.719)
+      ),
+      url("../public/DreamShaper_v7_A_picture_of_a_landscape_with_palm_trees_on_the_2.jpg");
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

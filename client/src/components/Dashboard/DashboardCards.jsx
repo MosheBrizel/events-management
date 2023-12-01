@@ -34,7 +34,7 @@ export default function DashboardCards() {
       }
     }
     getDataServer()
-  }, []);
+  }, [DataRegist]);
 
   return (
     <>
