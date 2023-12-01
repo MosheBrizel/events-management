@@ -5,13 +5,7 @@ import { CircularProgress } from '@mui/material';
 const WheelWaitingLogo = (props) => {
   return (
     <div>
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"150px"}}>
-      <img src="logo/logo.png" alt=""
-          style={{width: '422.89px',
-                  top: '171.09px',
-                  left: '305px'
-                }}/>
-      </div>
+      
       <Modal open={props.open}>
         <div 
           style={{
@@ -25,7 +19,7 @@ const WheelWaitingLogo = (props) => {
         <div style={{display: 'flex', justifyContent: 'center'}}>
             
             <CircularProgress 
-            color="yelow"
+            color="blue"
             /> 
         </div>
         </div>

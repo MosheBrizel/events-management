@@ -1,5 +1,5 @@
 import sendEmail from "../../middleware/sendEmailToTheClient.js";
-import { getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 
 import randomPassword from "../../functins/randomPassword.js";
 
@@ -31,7 +31,6 @@ const emailFunction = async (req, res) => {
       "verifyEmail.value": verifyPassword,
       "verifyEmail.date": new Date(),
     });
-    console.log(resSave);
     if (!resSave) {
       return res.status(400).json({
         mag: "error in DB",

@@ -57,7 +57,7 @@ export default function CircularTogetCode(props) {
     <Box sx={{ position: "relative", display: "inline-flex" }}>
       {timer == "time over" ? (
         <>
-          <Button color="text" onClick={hndelSendEmail} variant="outlined">
+          <Button color="blue" onClick={hndelSendEmail} variant="outlined">
             Sand Again
           </Button>
         </>
@@ -66,7 +66,7 @@ export default function CircularTogetCode(props) {
           <CircularProgress
             variant="determinate"
             value={progress}
-            color="text"
+            color="blue"
           />
           <Box
             sx={{

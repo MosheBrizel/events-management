@@ -8,7 +8,8 @@ import connectDB from "./db/dbCoonect.js";
 import routerAuth from "./routers/routerAuth.js";
 import routerPrivet from "./routers/routerPrivet.js";
 import routerForgetPassword from "./routers/routerForgetPassword.js";
-
+import checkAuth from "./middleware/checkAuth.js";
+import routerEvents from './routers/routerEvents.js'
 // connect fron the env file.
 dotenv.config();
 // get the port from the env or is 5050
@@ -25,11 +26,13 @@ connectDB();
 app.use("/users", routerAuth);
 app.use("/privet", routerPrivet);
 app.use("/forgetPassword", routerForgetPassword);
-
+app.use('/event',routerEvents)
 // chack if the DB is connect.
 mongoose.connection.once("open", () => {
   console.log("connect to the DB");
 });
+
+
 
 app.listen(port, () => {
   console.log("the server is listening in port " + port);

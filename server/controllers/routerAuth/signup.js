@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import { addToDB, getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { addToDB, getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 import bcrypt from "bcrypt";
 import sendEmail from "../../middleware/sendEmailToTheClient.js";
 import uploadImagecloudinary from '../../cloudinary/updateImage.js'
@@ -15,7 +15,7 @@ const signupFunction = async (req, res) => {
     });
   }
   
-  const { firstName, lastName, email, username, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
   
 
   //check if there is a user like this.
@@ -42,7 +42,6 @@ const signupFunction = async (req, res) => {
     firstName: firstName,
     lastName: lastName,
     email: email,
-    username: username,
     password: " ",
     image : imageUrl
   });

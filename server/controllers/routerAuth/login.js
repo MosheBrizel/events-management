@@ -1,7 +1,8 @@
 import calculateDateDifference from "../../functins/calculateDateDifference.js";
-import { getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 import bcrypt from "bcrypt";
 import JWT from "jsonwebtoken";
+import { getRowsfromAllUserEventsByObject } from "../../db/functionDBEventUser.js";
 
 const loginFunction = async (req, res) => {
   // get the user name and the password.
@@ -47,11 +48,14 @@ const loginFunction = async (req, res) => {
     username: user.username,
     image: user.image,
   };
-
+  const data = await getRowsfromAllUserEventsByObject({
+    email: email,
+  });
   if (user.token.value != "" && diffTime.hours < 720) {
     return res.status(200).json({
       token: user.token.value,
       user: sendInformtionUser,
+      data: data,
     });
   }
   // creat a token with the email inside.
@@ -74,16 +78,22 @@ const loginFunction = async (req, res) => {
         mag: "error in DB",
       });
     }
+
+    return res.status(200).json({
+      token: token,
+      user: sendInformtionUser,
+      data: data,
+    });
   } catch (error) {
     return res.status(400).json({
       mag: "error in DB",
     });
   }
   // send the token.
-  res.status(200).json({
-    token: token,
-    user: sendInformtionUser,
-  });
+  // res.status(200).json({
+  //   token: token,
+  //   user: sendInformtionUser,
+  // });
 };
 
 export default loginFunction;

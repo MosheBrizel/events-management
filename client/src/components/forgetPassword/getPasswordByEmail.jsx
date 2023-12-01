@@ -72,20 +72,14 @@ export default function GetPassword(props) {
       <WheelWaiting open={waiting}/>
       {netError ? (<ErrorConection/>):(
       <ThemeProvider theme={theme}>
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <img src="logo/logo.png" alt=""
-          style={{width: '422.89px',
-                  top: '171.09px',
-                  left: '305px',
-                }}/>
-          </div>
+      
         <Container
           component="main"
           maxWidth="xs"
           sx={{
-            backgroundColor: "darkblue.main",
+            backgroundColor: "white.main",
             borderRadius: "10px",
-            color: "white.main",
+            color: "blue.main",
             ".MuiInputLabel-root, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
               {
                 color: "inherit",
@@ -102,7 +96,7 @@ export default function GetPassword(props) {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "yelow.main" }}>
+            <Avatar sx={{ m: 1, bgcolor: "blue.main" }}>
               <LockOutlinedIcon
                 sx={{
                   fill: "inherit",
@@ -113,7 +107,7 @@ export default function GetPassword(props) {
               component="h1"
               variant="h5"
               sx={{
-                color: "yelow.main",
+                color: "blue.main",
               }}
             >
               Password verification
@@ -128,14 +122,14 @@ export default function GetPassword(props) {
               <Typography
                 variant="body2"
                 gutterBottom
-                color={"yelow.main"}
+                color={"blue.main"}
                 display="inline"
               >
                 Enter the code sent to you by e-mail to:{" "}
                 <Typography
                   variant="body2"
                   gutterBottom
-                  color={"white.main"}
+                  color={"blue.main"}
                   display="inline"
                 >
                   {emailAtom}
@@ -149,7 +143,7 @@ export default function GetPassword(props) {
               onSubmit={handleSubmit}
               sx={{ mt: 3 }}
             >
-              <Typography variant="body2" gutterBottom color={"yelow.main"}>
+              <Typography variant="body2" gutterBottom color={"blue.main"}>
                 The code is valid for 2 minutes:
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -171,7 +165,7 @@ export default function GetPassword(props) {
                     label="Enter the new password"
                     name="password"
                     autoFocus
-                    color="yelow"
+                    color="blue"
                     type="password"
                   />
                 </Grid>
@@ -180,8 +174,8 @@ export default function GetPassword(props) {
                 type="submit"
                 fullWidth
                 variant="contained"
-                color="darkblue"
-                sx={{ mt: 3, mb: 2, border:"solid", borderColor:'yelow.main', color:'yelow.main', '&:hover': {backgroundColor: 'darkblue.main'}}}
+                color="white"
+                sx={{ mt: 3, mb: 2, border:"solid", borderColor:'blue.main', color:'blue.main', '&:hover': {backgroundColor: 'white.main'}}}
               >
                 Send
               </Button>

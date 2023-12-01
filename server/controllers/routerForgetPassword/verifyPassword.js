@@ -1,4 +1,4 @@
-import { getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 import calculateDateDifference from "../../functins/calculateDateDifference.js";
 import bcrypt from "bcrypt";
 

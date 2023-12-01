@@ -1,6 +1,6 @@
 import JWT from "jsonwebtoken";
 import dotenv from "dotenv";
-import { getOneUser } from "../db/functionToDB.js";
+import { getOneUser } from "../db/functionToDBUser.js";
 dotenv.config();
 
 export default async (req, res, next) => {
