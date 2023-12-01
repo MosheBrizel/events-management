@@ -1,4 +1,5 @@
 import {
+  allDBEvents,
   getOneEvent,
   subtractOneEvent,
   updeteOneEvent,
@@ -11,6 +12,7 @@ import {
 
 const RegistrationEventFunction = async (req, res) => {
   const { corentEvent, email } = req.body;
+
   const data = await getRowsfromAllUserEventsByObject({ email: email });
   try {
     const eventUse = await getOneEvent({ numberEvent: corentEvent });
@@ -38,18 +40,17 @@ const RegistrationEventFunction = async (req, res) => {
       email: email,
       eventId: corentEvent,
     });
-    const updateEvent = await subtractOneEvent(corentEvent);
-    console.log(updateEvent);
     if (!addEvent) {
       return res.status(400).json({
         errors: {
-          msg: "erorr in the DB",
+          msg: "your are registered",
         },
       });
     }
+    const updateEvent = await subtractOneEvent(corentEvent);
     const data = await getRowsfromAllUserEventsByObject({ email: email });
-    
-    return res.status(200).json(data);
+
+    return res.status(200).json({ data });
   } catch (error) {
     return res.status(400).json({
       errors: {

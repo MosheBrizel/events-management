@@ -33,7 +33,7 @@ const theme = createTheme({
       main: "#EAEDE9",
     },
     blue: {
-      main: "#1976d2",
+      main: "#1229E9",
     },
   },
 });

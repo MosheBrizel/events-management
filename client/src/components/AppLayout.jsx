@@ -40,7 +40,9 @@ export default function AppLayout() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="white">
+              <Box height={'100px'}></Box>
+
+      <AppBar position="fixed" color="white">
         <Toolbar sx={{flexDirection:"row", justifyContent: 'space-between', alignItems: "center" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
@@ -105,6 +107,14 @@ export default function AppLayout() {
                       onClick={() => navigate("/CreateEvent")}
                     >
                       Create your one Event
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate("/")}
+                    >
+                      Home page
                     </Typography>
                   </MenuItem>
                   <MenuItem onClick={handleCloseUserMenu}>

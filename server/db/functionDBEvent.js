@@ -14,7 +14,6 @@ export async function addToDBEvent(objectEvent) {
   }
 }
 
-
 export async function allDBEvents() {
   try {
     const allEvents = await Event.find({});
@@ -65,9 +64,11 @@ export async function getRowsfromAllEventsByObject(objectEvent) {
 
 export async function subtractOneEvent(numberEvent) {
   try {
+    const event = await getOneEvent({ numberEvent: numberEvent });
+    console.log(event);
     const resDB = await Event.updateOne(
       { numberEvent: numberEvent },
-      { $inc: { yourField: -1 } }
+      { $set: { placesTaking: event.placesTaking + 1 } }
     );
     return resDB;
   } catch (error) {
