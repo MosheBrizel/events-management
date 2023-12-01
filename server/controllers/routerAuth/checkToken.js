@@ -1,11 +1,15 @@
-import { getOneUser } from "../../db/functionToDB.js"; 
+import { getRowsfromAllUserEventsByObject } from "../../db/functionDBEventUser.js";
+import { getOneUser } from "../../db/functionToDBUser.js";
 
 const tokenFunction = async (req, res) => {
   try {
     const { token } = req.body;
     let user = await getOneUser({ "token.value": token });
     if (user) {
-      return res.status(200).json({ msg: "Token is good" });
+      const data = await getRowsfromAllUserEventsByObject({
+        email: user.email,
+      });
+      return res.status(200).json({ msg: "Token is good", data: data });
     } else {
       return res.status(400).json({ msg: "Token is not good" });
     }

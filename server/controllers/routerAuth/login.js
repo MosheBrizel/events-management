@@ -1,7 +1,8 @@
 import calculateDateDifference from "../../functins/calculateDateDifference.js";
-import { getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 import bcrypt from "bcrypt";
 import JWT from "jsonwebtoken";
+import { getRowsfromAllUserEventsByObject } from "../../db/functionDBEventUser.js";
 
 const loginFunction = async (req, res) => {
   // get the user name and the password.
@@ -74,6 +75,14 @@ const loginFunction = async (req, res) => {
         mag: "error in DB",
       });
     }
+    const data = await getRowsfromAllUserEventsByObject({
+      email: user.email,
+    });
+    res.status(200).json({
+      token: token,
+      user: sendInformtionUser,
+      data: data,
+    });
   } catch (error) {
     return res.status(400).json({
       mag: "error in DB",

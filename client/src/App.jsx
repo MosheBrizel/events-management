@@ -3,7 +3,11 @@ import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //atom
-import { useToken, useUserInfo } from "./atoms/atomsFile.jsx";
+import {
+  useDataRegistered,
+  useToken,
+  useUserInfo,
+} from "./atoms/atomsFile.jsx";
 
 import axios from "axios";
 import axiosInstance from "../exios/axiosInstance.js";
@@ -14,6 +18,7 @@ import router from "./routers/router.jsx";
 export default function App() {
   const [token, setToken] = useToken();
   const [info, setUserInfo] = useUserInfo();
+  const [dataRegist, setdataRegist] = useDataRegistered();
 
   useEffect(() => {
     async function tokencheck() {
@@ -33,6 +38,7 @@ export default function App() {
           });
 
           if (response.status === 200) {
+            setdataRegist(response.data.data.map((item) => item.eventId))
             setToken(true);
             setUserInfo(JSON.parse(localStorageUser));
             try {

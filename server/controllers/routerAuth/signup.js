@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import { addToDB, getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { addToDB, getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 import bcrypt from "bcrypt";
 import sendEmail from "../../middleware/sendEmailToTheClient.js";
 import uploadImagecloudinary from '../../cloudinary/updateImage.js'
@@ -9,7 +9,6 @@ const signupFunction = async (req, res) => {
   // get the erorrs in the check middelwer.
   const errors = validationResult(req);
   // If there is an erorr.
-  console.log("kjnhbgbnj");
   if (!errors.isEmpty()) {
     return res.status(400).json({
       errors: errors.array(),

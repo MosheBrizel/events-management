@@ -30,7 +30,11 @@ import axiosInstance from "../../../exios/axiosInstance.js";
 import Collapse from "@mui/material/Collapse";
 import ErrorConection from "../Features/errorConection.jsx";
 
-import { useToken, useUserInfo } from "../../atoms/atomsFile.jsx";
+import {
+  useDataRegistered,
+  useToken,
+  useUserInfo,
+} from "../../atoms/atomsFile.jsx";
 
 function validateEmail(email) {
   return !(/@/.test(email) && /[.]/.test(email));
@@ -56,6 +60,7 @@ const defaultTheme = createTheme();
 export default function SignIn() {
   const [token, setToken] = useToken();
   const [info, setUserInfo] = useUserInfo();
+  const [dataRegist, setdataRegist] = useDataRegistered();
 
   const [netError, setNetError] = useState(false);
   const [waiting, setWaiting] = useState(false);
@@ -96,6 +101,8 @@ export default function SignIn() {
         if (response.status == 200) {
           const token = response.data.token;
           const user = response.data.user;
+          setdataRegist(response.data.data.map((item) => item.eventId));
+
           // put the token and the information of the user in local storage.
           localStorage.setItem("jsonwebtoken", token);
           localStorage.setItem("user", JSON.stringify(user));

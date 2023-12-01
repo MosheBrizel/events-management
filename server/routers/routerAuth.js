@@ -1,5 +1,5 @@
 import express from "express";
-import { getRowsfromAllUsers } from "../db/functionToDB.js";
+import { getRowsfromAllUsers } from "../db/functionToDBUser.js";
 const router = express.Router();
 import { check } from "express-validator";
 

@@ -6,10 +6,9 @@ import EventCard from "./EventCard";
 import { useEvent } from "./atom";
 import InformationEvent from "./informationEvent";
 import CloseIcon from "@mui/icons-material/Close";
+import urlPage from "../../../url/urlPath";
+import axios from "axios";
 
-function SimpleBackdrop(props) {
-  return <div></div>;
-}
 export default function DashboardCards() {
   const [evens, setEvens] = useState([]);
   const [oneEvent, setOneEvent] = useEvent();
@@ -17,44 +16,58 @@ export default function DashboardCards() {
 
   const handleClose = () => {
     setOpen(false);
-    setOneEvent(null)
+    setOneEvent(null);
   };
   const handleOpen = () => {
     setOpen(true);
   };
 
   useEffect(() => {
-    setEvens(fack);
-    console.log(evens);
+    async function getDataServer(){
+      try {
+        const data = await axios.get(urlPage + "event/allEvents");
+        console.log(data.data);
+        setEvens(data.data);
+      } catch (error) {
+        console.log(error);
+        setEvens([])
+      }
+    }
+    getDataServer()
   }, []);
 
   return (
     <>
-      {open && <Backdrop sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} open={open}>
-        <Box
-          sx={{
-            height: "90vh",
-            width: "80%",
-            padding: "10px",
-            background: "white",
-            borderRadius: "10px",
-          }}
+      {open && (
+        <Backdrop
+          sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={open}
         >
-          <Button onClick={handleClose}>
-            <CloseIcon />
-          </Button>
           <Box
             sx={{
-              overflow: "scroll",
-              height: "100%",
-              width: "100%",
+              height: "90vh",
+              width: "80%",
+              padding: "10px",
               background: "white",
+              borderRadius: "10px",
             }}
           >
-            <InformationEvent />
+            <Button onClick={handleClose}>
+              <CloseIcon />
+            </Button>
+            <Box
+              sx={{
+                overflow: "scroll",
+                height: "95%",
+                width: "100%",
+                background: "white",
+              }}
+            >
+              <InformationEvent />
+            </Box>
           </Box>
-        </Box>
-      </Backdrop>}
+        </Backdrop>
+      )}
       <Box
         display={"flex"}
         alignContent="space-around"
@@ -67,7 +80,7 @@ export default function DashboardCards() {
       >
         {evens.map((cardInfo, index) => {
           return (
-            <Button onClick={handleOpen}>
+            <Button key={index} onClick={handleOpen}>
               <EventCard key={index} data={cardInfo} />
             </Button>
           );

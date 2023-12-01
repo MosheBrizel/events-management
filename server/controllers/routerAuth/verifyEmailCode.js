@@ -1,6 +1,6 @@
 import calculateDateDifference from "../../functins/calculateDateDifference.js";
 
-import { getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 
 const verifyEmailfunction = async (req, res) => {
   const { email, code } = req.body;

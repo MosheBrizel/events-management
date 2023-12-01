@@ -16,16 +16,16 @@ const eventSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  plases: {
+  places: {
     type: Number,
     required: true,
   },
-  plasTaking: {
+  placesTaking: {
     type: Number,
     default: 0,
   },
   description: {
-    type: Number,
+    type: String,
     required: true,
   },
   location: {
@@ -35,11 +35,11 @@ const eventSchema = new mongoose.Schema({
   dressCode: {
     type: String,
   },
-  ArrivalInstructions: {
+  arrivalInstructions: {
     type: String,
   },
-  AgeRestriction: {
-    type: Number,
+  ageRestriction: {
+    type: String,
   },
   organizerEvent: {
     type: String,
@@ -52,6 +52,8 @@ const eventSchema = new mongoose.Schema({
     type: String,
   },
 });
+
+
 
 const Event = mongoose.model("Event", eventSchema);
 export default Event;

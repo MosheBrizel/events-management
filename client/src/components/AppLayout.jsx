@@ -26,8 +26,8 @@ export default function AppLayout() {
 
   const handleLogout = () => {
     setToken(false);
-    localStorage.display("user");
-    localStorage.display("jsonwebtoken");
+    localStorage.removeItem("user");
+    localStorage.removeItem("jsonwebtoken");
   };
 
   const handleOpenUserMenu = (event) => {

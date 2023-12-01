@@ -1,5 +1,5 @@
 import randomPassword from "../../functins/randomPassword.js";
-import { getOneUser, updeteOneUser } from "../../db/functionToDB.js";
+import { getOneUser, updeteOneUser } from "../../db/functionToDBUser.js";
 import sendEmail from "../../middleware/sendEmailToTheClient.js";
 
 const emailFanction = async (req, res) => {

@@ -1,6 +1,5 @@
 import express from "express";
 const router = express.Router();
-import dbToTest from '../db/dbToTest.js'
 
 import checkAuth from "../middleware/checkAuth.js";
 
