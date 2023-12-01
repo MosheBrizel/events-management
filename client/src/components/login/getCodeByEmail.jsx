@@ -70,7 +70,7 @@ export function GetCode(props) {
         sx={{
           backgroundColor: "white.main",
           borderRadius: "10px",
-          color: "text.main",
+          color: "blue.main",
           border:"1px solid",
           ".MuiInputLabel-root, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
             {
@@ -92,6 +92,7 @@ export function GetCode(props) {
             <LockOutlinedIcon
               sx={{
                 fill: "inherit",
+                bgcolor:'blue'
               }}
             />
           </Avatar>        
@@ -99,7 +100,7 @@ export function GetCode(props) {
             component="h1"
             variant="h5"
             sx={{
-              color: "black.main",
+              color: "blue.main",
             }}
           >
             Email verification
@@ -111,9 +112,9 @@ export function GetCode(props) {
             onSubmit={handleSubmit}
             sx={{ mt: 3 }}
           >
-          <Typography variant="body2" gutterBottom color={'black.main'} display='inline'>
+          <Typography variant="body2" gutterBottom color={'blue.main'} display='inline'>
             Enter the code sent to you by e-mail to: {' '}
-            <Typography variant="body2" gutterBottom color={'text.main'} display='inline'>
+            <Typography variant="body2" gutterBottom color={'blue.main'} display='inline'>
             {props.email}
             </Typography>
           </Typography>
@@ -125,7 +126,7 @@ export function GetCode(props) {
             onSubmit={handleSubmit}
             sx={{ mt: 3 }}
           >
-          <Typography variant="body2" gutterBottom color={'black.main'}>
+          <Typography variant="body2" gutterBottom color={'blue.main'}>
           The code is valid for 2 minutes:
           </Typography >
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -147,7 +148,7 @@ export function GetCode(props) {
                   label="Enter the code"
                   name="code"
                   autoFocus
-                  color="black"
+                  color="blue"
                   type="email"
                 />
               </Grid>
@@ -157,7 +158,7 @@ export function GetCode(props) {
               fullWidth
               variant="contained"
               color="white"
-              sx={{ mt: 3, mb: 2, border:"solid", borderColor:'black.main', color:'black.main', '&:hover': {backgroundColor: 'white.main'}}}
+              sx={{ mt: 3, mb: 2, border:"solid", borderColor:'blue.main', color:'blue.main', '&:hover': {backgroundColor: 'white.main'}}}
             >
               Send
             </Button>
@@ -170,7 +171,7 @@ export function GetCode(props) {
             >
               <Grid item xs={12}>
 
-                <NavLink to="/" variant="body2" style={{color:'text'}}>
+                <NavLink to="/" variant="body2" style={{color:'blue'}}>
 
                   Already have an account? Sign in
                 </NavLink>

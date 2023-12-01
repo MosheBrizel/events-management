@@ -79,7 +79,7 @@ export default function GetPassword(props) {
           sx={{
             backgroundColor: "white.main",
             borderRadius: "10px",
-            color: "text.main",
+            color: "blue.main",
             ".MuiInputLabel-root, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
               {
                 color: "inherit",
@@ -96,7 +96,7 @@ export default function GetPassword(props) {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "text.main" }}>
+            <Avatar sx={{ m: 1, bgcolor: "blue.main" }}>
               <LockOutlinedIcon
                 sx={{
                   fill: "inherit",
@@ -107,7 +107,7 @@ export default function GetPassword(props) {
               component="h1"
               variant="h5"
               sx={{
-                color: "text.main",
+                color: "blue.main",
               }}
             >
               Password verification
@@ -122,14 +122,14 @@ export default function GetPassword(props) {
               <Typography
                 variant="body2"
                 gutterBottom
-                color={"text.main"}
+                color={"blue.main"}
                 display="inline"
               >
                 Enter the code sent to you by e-mail to:{" "}
                 <Typography
                   variant="body2"
                   gutterBottom
-                  color={"text.main"}
+                  color={"blue.main"}
                   display="inline"
                 >
                   {emailAtom}
@@ -143,7 +143,7 @@ export default function GetPassword(props) {
               onSubmit={handleSubmit}
               sx={{ mt: 3 }}
             >
-              <Typography variant="body2" gutterBottom color={"text.main"}>
+              <Typography variant="body2" gutterBottom color={"blue.main"}>
                 The code is valid for 2 minutes:
               </Typography>
               <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -165,7 +165,7 @@ export default function GetPassword(props) {
                     label="Enter the new password"
                     name="password"
                     autoFocus
-                    color="text"
+                    color="blue"
                     type="password"
                   />
                 </Grid>
@@ -175,7 +175,7 @@ export default function GetPassword(props) {
                 fullWidth
                 variant="contained"
                 color="white"
-                sx={{ mt: 3, mb: 2, border:"solid", borderColor:'text.main', color:'text.main', '&:hover': {backgroundColor: 'white.main'}}}
+                sx={{ mt: 3, mb: 2, border:"solid", borderColor:'blue.main', color:'blue.main', '&:hover': {backgroundColor: 'white.main'}}}
               >
                 Send
               </Button>

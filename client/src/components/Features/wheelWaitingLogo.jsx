@@ -19,7 +19,7 @@ const WheelWaitingLogo = (props) => {
         <div style={{display: 'flex', justifyContent: 'center'}}>
             
             <CircularProgress 
-            color="text"
+            color="blue"
             /> 
         </div>
         </div>

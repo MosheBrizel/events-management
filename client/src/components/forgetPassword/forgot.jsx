@@ -101,7 +101,7 @@ export default function Forgot() {
             sx={{
               backgroundColor: "white.main",
               borderRadius: "10px",
-              color: "black.main",
+              color: "blue.main",
               border: "1px solid",
 
               ".MuiInputLabel-root, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
@@ -120,7 +120,7 @@ export default function Forgot() {
                 alignItems: "center",
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "text.main" }}>
+              <Avatar sx={{ m: 1, bgcolor: "blue.main" }}>
                 <LockOutlinedIcon
                   sx={{
                     fill: "inherit",
@@ -131,7 +131,7 @@ export default function Forgot() {
                 component="h1"
                 variant="h5"
                 sx={{
-                  color: "text.main",
+                  color: "blue.main",
                 }}
               >
                 Forgot Password
@@ -151,7 +151,7 @@ export default function Forgot() {
                       label="Email Address"
                       name="email"
                       autoComplete="off"
-                      color="text"
+                      color="blue"
                       onChange={(e) => setEmail(e.target.value)}
                       value={email}
                     />
@@ -173,8 +173,8 @@ export default function Forgot() {
                     mt: 3,
                     mb: 2,
                     border: "solid",
-                    borderColor: "text.main",
-                    color: "text.main",
+                    borderColor: "blue.main",
+                    color: "blue.main",
                     "&:hover": { backgroundColor: "white.main" },
                   }}
                 >
@@ -189,9 +189,9 @@ export default function Forgot() {
                 >
                   <Grid item>
                     <NavLink
-                      to="/"
+                      to="/SignIn"
                       variant="body2"
-                      style={{ color: "text", textDecoration: "underline" }}
+                      style={{ color: "blue", textDecoration: "underline" }}
                     >
                       Sign in
                     </NavLink>

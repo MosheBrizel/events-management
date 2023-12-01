@@ -159,12 +159,13 @@ export default function SignIn() {
               backgroundColor: "white.main",
               border: "1px solid",
               borderRadius: "10px",
-              color: "black.main",
+              color: "blue.main",
               margin: "aotu",
+              marginTop:"10%",
               ".MuiInputLabel-root, .MuiSvgIcon-root, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
                 {
-                  color: "black.main",
-                  borderColor: "black.main",
+                  color: "blue.main",
+                  borderColor: "blue.main",
                 },
             }}
           >
@@ -188,7 +189,7 @@ export default function SignIn() {
                 component="h1"
                 variant="h5"
                 sx={{
-                  color: "black.main",
+                  color: "blue.main",
                 }}
               >
                 Sign in
@@ -210,7 +211,7 @@ export default function SignIn() {
                       name="email"
                       autoComplete="off"
                       autoFocus
-                      color="black"
+                      color="blue"
                     />
                     <FormHelperText
                       id="standard-weight-helper-text"
@@ -248,7 +249,7 @@ export default function SignIn() {
                       }}
                       id="password"
                       autoComplete="off"
-                      color="black"
+                      color="blue"
                     />
                     <FormHelperText
                       id="standard-weight-helper-text"
@@ -266,9 +267,9 @@ export default function SignIn() {
                       control={
                         <Checkbox
                           value="remember"
-                          color="black"
+                          color="blue"
                           sx={{
-                            color: "black.main",
+                            color: "blue.main",
                             ".MuiSvgIcon-root": {
                               color: "inherit",
                               borderColor: "currentColor",
@@ -284,14 +285,14 @@ export default function SignIn() {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color="blue"
+                  color="white"
                   sx={{
                     mt: 3,
                     mb: 2,
                     border: "solid",
-                    borderColor: "black.main",
-                    color: "black.main",
-                    "&:hover": { backgroundColor: "blue.main" },
+                    borderColor: "blue.main",
+                    color: "blue.main",
+                    "&:hover": { backgroundColor: "gray.main" },
                   }}
                 >
                   Sign In

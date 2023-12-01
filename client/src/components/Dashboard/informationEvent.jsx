@@ -40,7 +40,7 @@ export default function InformationEvent(props) {
   return (
     <>
       {logInComp && (
-        <PopupLogIn logInComp={() => setLogInComp(false)} open={logInComp} />
+        <PopupLogIn  logInComp={() => setLogInComp(false)} open={logInComp} />
       )}
       <Box sx={{ margin: "5%" }}>
         <CardMedia

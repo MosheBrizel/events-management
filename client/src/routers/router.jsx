@@ -1,6 +1,8 @@
 import AppLayout from "../components/AppLayout";
 import DashboardCards from "../components/Dashboard/DashboardCards";
+import DashbordRegisteredEvents from "../components/Dashboard/DashbordRegisteredEvents";
 import NotFound from "../components/NotFound";
+import FormCreateEvent from "../components/createEvent/FormCreateEvent";
 import Forgot from "../components/forgetPassword/forgot";
 import { GetCode } from "../components/login/getCodeByEmail";
 import SignIn from "../components/login/signin";
@@ -32,6 +34,14 @@ const router = [
         element: <Forgot />,
       },
 
+      {
+        path: "/registeredEvents",
+        element: <DashbordRegisteredEvents />,
+      },
+      {
+        path: "/CreateEvent",
+        element: <FormCreateEvent />,
+      },
       {
         path: "*",
         element: <NotFound />,

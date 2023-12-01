@@ -38,7 +38,7 @@ export default function App() {
           });
 
           if (response.status === 200) {
-            setdataRegist(response.data.data.map((item) => item.eventId))
+            setdataRegist(response.data.data.map((item) => item.eventId));
             setToken(true);
             setUserInfo(JSON.parse(localStorageUser));
             try {

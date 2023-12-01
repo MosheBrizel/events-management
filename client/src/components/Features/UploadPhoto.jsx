@@ -60,8 +60,8 @@ export default function UploadPhoto() {
         overflow: "hidden",
         height: "56px",
         border: "solid",
-        borderColor: "text.main",
-        color: "text.main",
+        borderColor: "blue.main",
+        color: "blue.main",
       }}
       component="label"
       fullWidth

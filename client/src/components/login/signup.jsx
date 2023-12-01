@@ -78,7 +78,6 @@ export default function SignUp() {
   function validateEmail(email) {
     return !(/@/.test(email) && /[.]/.test(email));
   }
-  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -155,8 +154,6 @@ export default function SignUp() {
     }
   };
 
-  
-
   let linkforgut = null;
 
   if (emailExists == "emailExists") {
@@ -166,7 +163,7 @@ export default function SignUp() {
           The email address is already registered in the system,
         </FormHelperText>
 
-        <NavLink to="/forgot" variant="body2" style={{ color: "text" }}>
+        <NavLink to="/forgot" variant="body2" style={{ color: "blue" }}>
           Forgot password?
         </NavLink>
       </>
@@ -203,7 +200,7 @@ export default function SignUp() {
         <NavLink
           onClick={handleVerifyEmail}
           variant="body2"
-          style={{ color: "text" }}
+          style={{ color: "blue" }}
         >
           to verify the email
         </NavLink>
@@ -221,7 +218,7 @@ export default function SignUp() {
 
   return (
     <>
-      <WheelWaiting open={waiting} />
+      <WheelWaiting open={waiting}  />
       {page == "code" && <GetCode email={email} />}
       {page == "error" && <ErrorConection />}
       {page == "signup" && (
@@ -232,8 +229,9 @@ export default function SignUp() {
             sx={{
               backgroundColor: "white.main",
               borderRadius: "10px",
-              color: "black.main",
+              color: "blue.main",
               border: "1px solid",
+              marginTop:'5%',
 
               ".MuiInputLabel-root, .MuiOutlinedInput-root, .MuiOutlinedInput-notchedOutline":
                 {
@@ -249,9 +247,10 @@ export default function SignUp() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "text.main" }}>
+              <Avatar sx={{ m: 1, bgcolor: "blue.main" }}>
                 <LockOutlinedIcon
                   sx={{
                     fill: "inherit",
@@ -262,7 +261,8 @@ export default function SignUp() {
                 component="h1"
                 variant="h5"
                 sx={{
-                  color: "text.main",
+                  color: "blue.main",
+                  
                 }}
               >
                 Sign up
@@ -283,7 +283,7 @@ export default function SignUp() {
                       id="firstName"
                       label="First Name"
                       autoFocus
-                      color="text"
+                      color="blue"
                     />
                     <FormHelperText
                       id="standard-weight-helper-text"
@@ -300,7 +300,7 @@ export default function SignUp() {
                       label="Last Name"
                       name="lastName"
                       autoComplete="off"
-                      color="text"
+                      color="blue"
                     />
                     <FormHelperText
                       id="standard-weight-helper-text"
@@ -331,7 +331,6 @@ export default function SignUp() {
                     {linkEmailVerification}
                   </Grid>
 
-                  
                   <Grid item xs={12}>
                     <TextField
                       onChange={(e) => {
@@ -351,7 +350,7 @@ export default function SignUp() {
                               onClick={handleClickShowPassword}
                               onMouseDown={handleMouseDownPassword}
                               edge="end"
-                              color="black"
+                              color="blue"
                             >
                               {showPassword ? (
                                 <Visibility />
@@ -364,7 +363,7 @@ export default function SignUp() {
                       }}
                       id="password"
                       autoComplete="off"
-                      color="text"
+                      color="blue"
                       onFocus={() => setFocusedPass(true)}
                       onBlur={() => setFocusedPass(false)}
                     />
@@ -431,7 +430,7 @@ export default function SignUp() {
                               onClick={handleClickShowConfirmPassword}
                               onMouseDown={handleMouseDownPassword}
                               edge="end"
-                              color="black"
+                              color="blue"
                             >
                               {showConfirmPassword ? (
                                 <Visibility />
@@ -443,7 +442,7 @@ export default function SignUp() {
                         ),
                       }}
                       id="ConfirmPassword"
-                      color="text"
+                      color="blue"
                     />
                     <FormHelperText
                       id="standard-weight-helper-text"
@@ -466,9 +465,9 @@ export default function SignUp() {
                     mt: 3,
                     mb: 2,
                     border: "solid",
-                    borderColor: "text.main",
-                    color: "text.main",
-                    "&:hover": { backgroundColor: "white.main" },
+                    borderColor: "blue.main",
+                    color: "blue.main",
+                    "&:hover": { backgroundColor: "gray.main" },
                   }}
                 >
                   Sign Up
@@ -482,9 +481,9 @@ export default function SignUp() {
                 >
                   <Grid item>
                     <NavLink
-                      to="/"
+                      to="/SignIn"
                       variant="body2"
-                      style={{ color: "text", textDecoration: "underline" }}
+                      style={{ color: "blue", textDecoration: "underline" }}
                     >
                       Already have an account? Sign in
                     </NavLink>

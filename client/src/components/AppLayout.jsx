@@ -17,9 +17,10 @@ import {
 } from "@mui/material";
 import { useToken, useUserInfo } from "../atoms/atomsFile";
 import Search from "./Search.jsx";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
 
 export default function AppLayout() {
+  const navigate = useNavigate();
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [user, setUser] = useUserInfo();
   const [token, setToken] = useToken();
@@ -55,8 +56,12 @@ export default function AppLayout() {
             sx={{ marginLeft: "auto", display: "flex", alignItems: "center" }}
           >
             {!token ? (
-              <NavLink to={"SignIn"}>
-                <Button color="inherit" sx={{ border: "1px solid" }}>
+              <NavLink to={"SignIn"} color="blue" sx={{ color: "blue" }}>
+                <Button
+                  to={"SignIn"}
+                  color="inherit"
+                  sx={{ border: "1px solid" }}
+                >
                   Login
                 </Button>
               </NavLink>
@@ -86,6 +91,14 @@ export default function AppLayout() {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate("/registeredEvents")}
+                    >
+                      registered events
+                    </Typography>
+                  </MenuItem>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" onClick={handleLogout}>
                       Logout

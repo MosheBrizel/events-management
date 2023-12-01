@@ -34,9 +34,6 @@ router.post(
   signupFunction
 );
 router.post("/token", tokenFunction);
-router.get("/", async (req, res) => {
-  const response = await getRowsfromAllUsers("email username image");
-  res.json(response);
-});
+
 
 export default router;

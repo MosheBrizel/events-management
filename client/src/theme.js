@@ -8,7 +8,7 @@ const theme = createTheme({
       main: red.A400,
     },
     green: {
-      main:'rgba(44, 177, 88, 0.632)'
+      main: "rgba(44, 177, 88, 0.632)",
     },
     white: {
       main: "#fff",
@@ -28,6 +28,12 @@ const theme = createTheme({
     },
     blue: {
       main: "#275FC1",
+    },
+    gray: {
+      main: "#EAEDE9",
+    },
+    blue: {
+      main: "#1976d2",
     },
   },
 });
